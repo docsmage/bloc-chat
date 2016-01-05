@@ -2,13 +2,32 @@
   <h1>{{ title }}</h1>
 </section>
 
-<!-- List of rooms -->
-<section class="rooms" ng-repeat="room in rooms">{{room.name}}
+<section id="roomsandmessagescontainer">
+
+	<!-- List of rooms -->
+	<section id="roomcontainer">
+		<section class="rooms" ng-repeat="room in rooms"><a ng-click="setRoom(room.name)">{{room.name}}</a>
+		</section>
+	</section>
+
+	<!-- List of messages -->
+	<section class="messages">
+
+		<h4 id="roomTitle">{{ roomTitle }}</h4>
+	<!-- Message stuff will go here -->
+	<p>Where room messages will go!</p>
+	</section>
+
 </section>
-<br>
 
 <!-- Add a new room -->
-<form ng-submit="addRoom()">
+<form id="submit" ng-submit="addRoom()">
 		<input ng-model="newRoomName" />
 			<button type="submit">Add Room</button>
+	</form>
+
+<!-- Add a new room -->
+<form id="submit" ng-submit="sendMessage()">
+		<input ng-model="messageContent" />
+			<button type="submit">Send Message</button>
 	</form>

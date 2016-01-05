@@ -1,23 +1,42 @@
 #container {
-  margin: auto;
+	margin: auto;
   position: absolute;
-  height: 75%;
-  width: 60%;
   top: 0; left: 0; bottom: 0; right: 0;
+	height: 70%;
+  width: 70%;
+	overflow: scroll;
   text-align: center;
-  font-family: Georgia;
-	
 	/*for testing purposes*/
 /*
 border-style: solid; 
 border-padding: 1px;
-border-color: red;
+border-color: black;
 */
 }
 
-.rooms {
+#roomsandmessagescontainer {
+	height: 50%;
+}
+
+#roomcontainer {
 	background-color: lightgrey;
-	width: 100%;
+	float: left;
+	width: 35%;
+	height: 100%;
+}
+
+.rooms {
+	color: grey;
 	padding: 10px;
-	text-align: left;
+}
+
+.messages {
+	float: right;
+	width: 65%;
+}
+
+#submit {
+	clear: both;
+	text-align: center;
+	padding-top: 15px;
 }
