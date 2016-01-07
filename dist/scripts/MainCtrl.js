@@ -13,11 +13,13 @@ blocChat.controller('MainCtrl', function ($scope, Rooms, $rootScope) {
 		}
 	});
 	
-	// set the room - not yet active
-	$scope.setRoom = function (roomName) {
-		$scope.roomName = $scope.room.name;
-		$scope.messages = Messages.getRoomMessages(room);
-// getRoomMessages() not yet complete
+	// set the room title & content
+	$scope.setRoom = function (room) {
+		$scope.roomTitle = room.name;
+		Rooms.getRoomMessages(room.$id, function (messages) {
+			$scope.messages = messages;
+			$scope.$apply();
+		});
 	};
 	
 	// create a new room

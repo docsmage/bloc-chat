@@ -6,7 +6,7 @@
 
 	<!-- List of rooms -->
 	<section id="roomcontainer">
-		<section class="rooms" ng-repeat="room in rooms"><a ng-click="setRoom(room.name)">{{room.name}}</a>
+		<section class="rooms" ng-repeat="room in rooms"><a ng-click="setRoom(room)">{{room.name}}</a>
 		</section>
 	</section>
 
@@ -15,7 +15,7 @@
 
 		<h4 id="roomTitle">{{ roomTitle }}</h4>
 	<!-- Message stuff will go here -->
-	<p>Where room messages will go!</p>
+	<p ng-repeat="message in messages">{{message.username}}: {{message.content}}</p>
 	</section>
 
 </section>
@@ -26,8 +26,10 @@
 			<button type="submit">Add Room</button>
 	</form>
 
-<!-- Add a new room -->
+<!-- Send a message in a room - commented out until I integrate username functionality -->
+
+<!--
 <form id="submit" ng-submit="sendMessage()">
 		<input ng-model="messageContent" />
 			<button type="submit">Send Message</button>
-	</form>
+	</form>-->
