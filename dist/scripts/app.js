@@ -1,6 +1,8 @@
-var blocChat = angular.module("blocChat", ["ui.router", "firebase"]);
+var blocChat = angular.module("blocChat", ["ui.router", "firebase", "ui.bootstrap", "ngCookies"])
 
-blocChat.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+
+// config states & controllers
+.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $locationProvider.html5Mode({
     enabled: true,
@@ -14,6 +16,21 @@ blocChat.config(function($stateProvider, $locationProvider, $urlRouterProvider) 
       url: '/',
       controller: 'MainCtrl',
       templateUrl: '/templates/home.html'
-    });
+	});
 
-});
+})
+
+// set a username
+.run(['$cookies', '$modal', function($cookies, $modal) {
+	
+		if (!$cookies.blocChatCurrentUser || $cookies.blocChatCurrentUser === '') {
+			$modal.open({
+				templateUrl: '/templates/login.html',
+				controller: 'LoginCtrl',
+				size: 'sm',
+				backdrop: 'static',
+				keyboard: false
+			});
+		}
+	
+}]);
