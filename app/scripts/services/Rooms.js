@@ -3,7 +3,6 @@ blocChat.factory('Rooms', ['$firebaseArray', function($firebaseArray) {
   var firebaseRef = new Firebase("https://rcsblocchat.firebaseio.com/");
 	
   var rooms = $firebaseArray(firebaseRef.child('rooms'));
-	
 	var messages = firebaseRef.child('messages');
 	
   return {
@@ -15,16 +14,10 @@ blocChat.factory('Rooms', ['$firebaseArray', function($firebaseArray) {
 		},
 		
 		// display messages in a room
-		getRoomMessages: function (roomId, callback) {
-			messages.orderByChild('roomId').equalTo(roomId).on('value', function(messages) {
+		getRoomMessages: function (roomId, callback) {					messages.orderByChild('roomId').equalTo(roomId).on('value', function(messages) {
 				callback(messages.val());
 			});
-			},
+			}
 		
-//	Don't use again until you've added functionality to establish a username
-		sendMessage: function (messageContent) {
-		messages.$add({content: messageContent});
-		}
-
 	}
 }]);

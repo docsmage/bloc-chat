@@ -4,6 +4,8 @@
 	<p>This name will appear when you send messages.</p>
 	<input type="text" ng-model="userName">
 	<button type="button" ng-click="createUserName(userName)">Set Username</button>
+	<div ng-show="errorMessage" class="error-message">
+    {{errorMessage}}<br/>
 	<br><br>
 	</div>
 </div>
