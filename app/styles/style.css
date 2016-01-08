@@ -14,8 +14,20 @@ border-color: black;
 */
 }
 
+.title {
+	background-color: lightblue;
+	padding-top: 3px;
+	padding-bottom: 5px;
+}
+
 #roomsandmessagescontainer {
+	background-color: #F0F2F2;
 	height: 50%;
+}
+
+#addroom {
+	padding-top: 23%;
+	padding-bottom: 20px;
 }
 
 #roomcontainer {
@@ -33,6 +45,12 @@ border-color: black;
 .messages {
 	float: right;
 	width: 65%;
+	height: 100%;
+}
+
+#sendmessage {
+	float: right;
+	padding-right: 70px;
 }
 
 #submit {
