@@ -25,10 +25,12 @@ border-color: black;
 	height: 50%;
 }
 
+/*
 #addroom {
 	padding-top: 23%;
 	padding-bottom: 20px;
 }
+*/
 
 #roomcontainer {
 	background-color: lightgrey;
@@ -49,12 +51,16 @@ border-color: black;
 }
 
 #sendmessage {
-	float: right;
-	padding-right: 70px;
+/*	float: right;*/
+/*	padding-right: 70px;*/
 }
 
 #submit {
 	clear: both;
 	text-align: center;
 	padding-top: 15px;
+}
+
+.error-message {
+	color: red;
 }

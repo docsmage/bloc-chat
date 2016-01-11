@@ -10,14 +10,6 @@
 		<section class="rooms" ng-repeat="room in rooms"><a ng-click="setRoom(room)">{{room.name}}</a>
 		</section>
 
-	<!-- Add a new room -->
-<div id="addroom">
-		<form id="submit" ng-submit="addRoom()">
-		<input ng-model="newRoomName" />
-			<button type="submit">Add </button>
-	</form>
-</div>
-	
 	</section>
 
 	<!-- List of messages -->
@@ -27,7 +19,15 @@
 	<p ng-repeat="message in messages">{{message.username}}: {{message.content}}</p>
 		
 	</section>
-		
+
+	<!-- Add a new room -->
+<div id="addroom">
+		<form id="submit" ng-submit="addRoom()">
+		<input ng-model="newRoomName" />
+			<button type="submit">Add Room </button>
+	</form>
+</div>	
+	
 	<!-- Send a message -->
 	<div id="sendmessage" ng-hide="roomId == null">
 	<form id="submit" ng-submit="sendMessage()">
